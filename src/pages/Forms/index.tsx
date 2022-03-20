@@ -197,7 +197,7 @@ export const Forms = () => {
                 .then(() => {
                     workbook.eachSheet((sheet) => {
                         sheet.eachRow( async(row,rowIndex) => {
-                            if(rowIndex >= 11 && rowIndex <= 495) {
+                            if(rowIndex >= 11 && rowIndex <= 534) {
                                 const rowValues = row.values as any
                                 console.log(rowValues,rowIndex)
                                 const studentsCollections = collection(db,'Alunos') // Inside db, get Alunos Collection
@@ -306,10 +306,10 @@ export const Forms = () => {
                         <button onClick={generateExcel}>Gerar Excel</button>
                     </div>
 
-                  {/*   <div>
+                    <div>
                         <input type="file" onChange={handleFileChange} />
                         <button disabled={!excelFile} onClick={uploadData}>Carregar dados da planilha</button>
-                    </div> */}
+                    </div>
                     
                 </ContainerButtons>
             </Container>
