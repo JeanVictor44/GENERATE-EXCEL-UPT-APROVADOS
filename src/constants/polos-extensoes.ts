@@ -160,86 +160,35 @@ export const POLOS_EXTENSOES = {
         'Vera Cruz',
         'Ituberá – Sede'
     ],
+    Salvador: [
+        'Associação Mãe Rainha',
+        'Base Comunitária de Segurança do Bairro da Paz',
+        'Base Comunitária de Segurança Pública Rio Sena',
+        'Base_Comunitária de Segurança Pública do Calabar',
+        'Escola Municipal de Fazenda Coutos',
+        'Centro de Referência LGBT -Rio_Vermelho',
+        'Colégio Estadual Ana Bernades',
+        'Centro Social de Narandiba',
+        'Centro Social de Nordeste de Amaralina - CSU',
+        'Cepaia - Pelourinho',
+        'Colégio Estadual Edvaldo Brandão Correia',
+        'Colégio da Polícia Militar - CPM',
+        'Ilha de Maré Praia Grande',
+        'Colégio Estadual Góes Calmon',
+        'David Mendes Pereira',
+        'Associação Fábrica Cultural',
+        'Colégio Estadual Duque de Caxias',
+        'Helena Magalhães',
+        'Colégio Estadual Nelson Mandela',
+        'Colégio Noemia Rego',
+        'Colégio_Estadual_Dom_Avelar_Brandão_Vilela', 
+        'Sociedade_Recreativa e Cultural Afoxe Filhas de Gandhyo Almeida',
+        'Terreiro Ilê Axé Opo Afonjá', 
+        'Departamento Ciências da Vida da UNEB - Cabula',
+        'Departamento de Ciências Exatas e da Terra - Cabula'
+    ],
     Xique_Xique: [
         'Xique-Xique'
-    ],
-    Associação_Mãe_Rainha: [
-        'Salvador'
-    ],
-    Base_Comunitária_de_Segurança_do_Bairro_da_Paz: [
-        'Salvador'
-    ],
-    Base_Comunitária_de_Segurança_Pública_Rio_Sena: [
-        'Salvador'
-    ],
-    Base_Comunitária_de_Segurança_Pública_do_Calabar:[
-        'Salvador'
-    ],
-    Escola_Municipal_de_Fazenda_Coutos: [
-        'Salvador'
-    ],
-    Centro_de_Referência_LGBT_$_Rio_Vermelho:[
-        'Salvador'
-    ],
-    Colégio_Estadual_Ana_Bernades: [
-        'Salvador'
-    ],
-    Centro_Social_de_Narandiba: [
-        'Salvador'
-    ],
-    Centro_Social_de_Nordeste_de_Amaralina_$_CSU: [
-        'Salvador'
-    ],
-    Cepaia_$_Pelourinho: [
-        'Salvador'
-    ],
-    Colégio_Estadual_Edvaldo_Brandão_Correia:[
-        'Salvador'
-    ],
-    Colégio_da_Polícia_Militar_$_CPM: [
-        'Salvador'
-    ],
-    Ilha_de_Maré_Praia_Grande: [
-        'Salvador'
-    ],
-    Colégio_Estadual_Góes_Calmon:[
-        'Salvador'
-    ],
-    David_Mendes_Pereira: [
-        'Salvador'
-    ],
-    Associação_Fábrica_Cultural: [
-        'Salvador'
-    ],
-    Colégio_Estadual_Duque_de_Caxias: [
-        'Salvador'
-    ],
-    Helena_Magalhães: [
-        'Salvador'
-    ],
-    Colégio_Estadual_Nelson_Mandela: [
-       'Salvador'
-    ],
-    Colégio_Noemia_Rego: [
-        'Salvador'
-    ],
-    Colégio_Estadual_Dom_Avelar_Brandão_Vilela: [
-        'Salvador'
-    ],
-    Sociedade_Recreativa_e_Cultural_Afoxe_Filhas_de_Gandhy:[
-        'Salvador'
-    ],
-    Rômulo_Almeida:[
-        'Salvador'
-    ],
-    Terreiro_Ilê_Axé_Opo_Afonjá: [
-        'Salvador'
-    ],
-    Departamento_Ciências_da_Vida_da_UNEB_$_Cabula: [
-        'Salvador'
-    ],
-    Departamento_de_Ciências_Exatas_e_da_Terra_$_Cabula: [
-        'Salvador'
     ],
     Centro_Avançado_da_UNEB: [
         'Lauro de Freitas'
@@ -247,9 +196,6 @@ export const POLOS_EXTENSOES = {
     Escola_Municipal_Loteamento_Santa_Júlia: [
         'Lauro de Freitas'
     ]
-
-
-
 }
 
 export const POLOS = Object.keys(POLOS_EXTENSOES)
