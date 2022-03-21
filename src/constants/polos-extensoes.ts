@@ -22,17 +22,15 @@ export const POLOS_EXTENSOES = {
         'Caetité',
         'Igaporã'
     ],
-    Camaçari_1: [
+    Camaçari: [
         'Ilha de Bom Jesus dos Passos', 
-        'ACUCINHO PRAIA DO FORTE',
+        'Acucinho Praia do Forte',
         'Mata de São João',
         'Camaçari',
         'Candeias',
         'Monte Gordo',
         'Pojuca',
-        'Arembepe'
-    ],
-    Camaçari_2: [
+        'Arembepe',
         'Dias D’Avila',
         'Simões Filho – Colégio Polivalente',
         'Simões Filho – Quilombo Pitanga dos Palmares',
@@ -50,21 +48,21 @@ export const POLOS_EXTENSOES = {
     ],
     Euclides_da_Cunha: [
         'Euclides da Cunha',
-        'Quinjingue',
+        'Quijingue',
         'Euclides da Cunha – Aldeia Indígena Massacará'
     ],
     Eunápolis: [
         'Eunápolis',
-        'Aldeia  Boca da Mata'
+        'Aldeia indígena Boca da Mata'
     ],
     Guanambi: [
         'Carinhanha',
         'Mutãns',
-        'Guanambi - Departamento',
+        'Guanambi',
         'Matina',
         'Palmas de Monte Alto',
         'Iuiu',
-        'Candiba'
+        'Candiba',
     ],
     Ipiaú: [
         'Ipiaú'
@@ -85,7 +83,7 @@ export const POLOS_EXTENSOES = {
         'Andaraí'
     ],
     Jacobina: [
-        'Jacobina – Centro',
+        'Jacobina',
         'Tapiramutá',
         'Jacobina - Bairro Jacobina II',
         'Caldeirão Grande',
@@ -96,13 +94,13 @@ export const POLOS_EXTENSOES = {
         'Várzea Nova',
         'Capim Grosso'
     ],
-    Juazeiro_1_$_DCH:[
+    Juazeiro_1:[
         'Quilombo Alagadiço',
         'Curaçá',
         'Santo Sé',
         'Juazeiro'
     ],
-    Juazeiro_2_$_DTCS: [
+    Juazeiro_2: [
         'Casa Nova'
     ],
     Paulo_Afonso: [
@@ -123,12 +121,13 @@ export const POLOS_EXTENSOES = {
         'Ibipeba',
         'Canarana',
         'Ibititá',
-        'Palmeiras'
+        'Palmeiras',
+        'Macaúbas'
     ],
     Senhor_do_Bomfim:[
         'Andorinha',
         'Antonio Gonçalves',
-        'Campo Formoso - Sede',
+        'Campo Formoso',
         'Campo Formoso – Com. Quilombola de São Tomé',
         'Lages dos Negros',
         'Itiuba',
@@ -164,38 +163,41 @@ export const POLOS_EXTENSOES = {
         'Associação Mãe Rainha',
         'Base Comunitária de Segurança do Bairro da Paz',
         'Base Comunitária de Segurança Pública Rio Sena',
-        'Base_Comunitária de Segurança Pública do Calabar',
-        'Escola Municipal de Fazenda Coutos',
-        'Centro de Referência LGBT - Rio Vermelho',
+        'Base Comunitária de Segurança Pública do Calabar',
+        'Colégio Municipal Fazenda Coutos',
+        'Centro de Referência LGBT Rio Vermelho',
         'Colégio Estadual Ana Bernades',
         'Centro Social de Narandiba',
-        'Centro Social de Nordeste de Amaralina - CSU',
-        'Cepaia - Pelourinho',
+        'Centro Social de Nordeste de Amaralina CSU',
+        'Cepaia',
         'Colégio Estadual Edvaldo Brandão Correia',
-        'Colégio da Polícia Militar - CPM',
-        'Ilha de Maré Praia Grande',
+        'Colégio da Polícia Militar - CPM / Dendezeiros',
+        'Ilha de Maré',
         'Colégio Estadual Góes Calmon',
         'David Mendes Pereira',
         'Associação Fábrica Cultural',
         'Colégio Estadual Duque de Caxias',
-        'Helena Magalhães',
+        'Colégio Estadual Helena Magalhães',
         'Colégio Estadual Nelson Mandela',
-        'Colégio Noemia Rego',
+        'Colégio Estadual Noêmia Rego',
         'Colégio Estadual Dom Avelar Brandão Vilela', 
-        'Sociedade Recreativa e Cultural Afoxe Filhas de Gandhyo Almeida',
+        'Colégio Estadual Prof. Rômulo Almeida',
+        'Sociedade Recreativa e Cultural Afoxe Filhas de Gandhy',
         'Terreiro Ilê Axé Opo Afonjá', 
-        'Departamento Ciências da Vida da UNEB - Cabula',
-        'Departamento de Ciências Exatas e da Terra - Cabula'
+        'Departamento Ciências da Vida da UNEB',
+        'Departamento de Ciências Exatas e da Terra',
+        'Santa Júlia'
+        
     ],
     Xique_Xique: [
         'Xique-Xique'
     ],
-    Centro_Avançado_da_UNEB: [
-        'Lauro de Freitas'
-    ],
-    Escola_Municipal_Loteamento_Santa_Júlia: [
-        'Lauro de Freitas'
+    Lauro_de_Freitas: [
+        'Centro Avançado da UNEB',
+        'Escola Municipal Loteamento Santa Júlia'
+    
     ]
+   
 }
 
 export const POLOS = Object.keys(POLOS_EXTENSOES)
