@@ -10,5 +10,6 @@ export type Student = {
     phone: string
     placing: string
     polo: string
-    selectionType: string
+    selectionType: string,
+    id?:string
 }

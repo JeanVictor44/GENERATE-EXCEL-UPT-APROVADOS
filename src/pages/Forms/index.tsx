@@ -2,12 +2,11 @@ import { Container, ContainerButtons } from "./style"
 import React, { useState } from 'react'
 import { TPolos } from "../../common/types"
 import { POLOS, POLOS_EXTENSOES } from "../../constants/polos-extensoes"
-import { FormatedPolo } from "../../utils/formated-polo"
+import { formatedPolo, generateEfficiencyExcel, generateStudentsExcel, getFirebaseDocs } from "../../utils"
 import InputMask from 'react-input-mask';
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore"
 import { db } from "../../config/firebase"
 import Excel from 'exceljs'
-import { generateStudentsExcel } from "../../utils/generate-students-excel"
 
 export const Forms = () => {
     const [ selectedPolo, setSelectedPolo ] = useState<TPolos>('Alagoinhas')
@@ -19,7 +18,8 @@ export const Forms = () => {
     const [ selectionType, setSelectionType ] = useState('')
     const [ placing, setPlacing ] = useState('')
     const [ name, setName ] = useState('')
-
+    const [ editionYear, setEditionYear ] = useState('')
+    
     const [excelFile, setExcelFile ] = useState<File | null>(null)
 
     const handleFileChange = (e:React.ChangeEvent<HTMLInputElement> ) => {
@@ -38,7 +38,7 @@ export const Forms = () => {
                 .then(() => {
                     workbook.eachSheet((sheet) => {
                         sheet.eachRow( async(row,rowIndex) => {
-                            if(rowIndex >= 11 && rowIndex <= 534) {
+                            if(rowIndex >= 11 && rowIndex <= 35) {
                                 const rowValues = row.values as any
                                 console.log(rowValues,rowIndex)
                                 const studentsCollections = collection(db,'Alunos') // Inside db, get Alunos Collection
@@ -61,10 +61,19 @@ export const Forms = () => {
                         })
                     })
                 })
-        };
-        
+        };   
     }
-    
+
+    /* const fillDocuments = async() => {
+        const docs = await getFirebaseDocs('Alunos')
+        docs.forEach(async(document) => {
+            const collectionRef = collection(db,'Alunos')
+            const documentRef = doc(collectionRef,document.id )
+            await updateDoc(documentRef, {editionYear:2021})
+            console.log(documentRef)
+        })
+
+    } */
     
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -83,14 +92,16 @@ export const Forms = () => {
         const studentsCollections = collection(db,'Alunos') // Inside db, get Alunos Collection
         await addDoc(studentsCollections,{
             name,
-            phone,
-            course,
-            institution,
-            institutionLocation,
-            selectionType,
-            placing,
-            polo:FormatedPolo(selectedPolo),
-            extensao
+            phone: phone || 'não informado',
+            course: course || 'não informado',
+            institution: institution || 'não informado',
+            institutionLocation: institutionLocation || 'não informado',
+            selectionType: selectionType ||  'não informado',
+            placing: placing || 'não informado',
+            polo:formatedPolo(selectedPolo),
+            extensao,
+            editionYear: editionYear || 'não informado' 
+
         })
 
         setSelectedPolo('Alagoinhas')
@@ -102,6 +113,7 @@ export const Forms = () => {
         setSelectionType('')
         setExtensao(POLOS_EXTENSOES[selectedPolo][0])     
         setName('')   
+        setEditionYear('')
     }
 
     return (
@@ -120,13 +132,14 @@ export const Forms = () => {
                 <input type="text" placeholder="Local / Município da universidade / Faculdade" value={institutionLocation} onChange={(event) => setInstitutionLocation(event.target.value)}/>
                 <input type="text" placeholder="Tipo de seleção ex: SISU" value={selectionType} onChange={(event) => setSelectionType(event.target.value)}/>
                 <input type="text" placeholder="Colocação no vestibular / Processo seletivo" value={placing} onChange={(event) => setPlacing(event.target.value)}/>
+                <input type="text" placeholder="Ano de edição do upt" value={editionYear} onChange={(event) => setEditionYear(event.target.value)}/>
 
                 <select onChange={handleChangePolo} value={selectedPolo}>
 
                     <option value="" disabled selected hidden>Selecione o Polo</option>
                     {
                         POLOS.map((polo) => (
-                                <option value={polo}>{FormatedPolo(polo as TPolos)}</option>
+                                <option value={polo}>{formatedPolo(polo as TPolos)}</option>
                         ))
                     }
                     
@@ -144,11 +157,13 @@ export const Forms = () => {
                 <ContainerButtons>
                     <div>
                         <button onClick={handleCreateStudent}>Cadastrar</button>
-                        <button onClick={generateStudentsExcel}>Gerar Excel</button>
+                        <button onClick={generateStudentsExcel}>Gerar planilha dos alunos</button>
+                        {/*<button onClick={fillDocuments}>Preencher vazios</button>*/}                        
+                        {/* <button onClick={generateEfficiencyExcel}>Gerar planilha de aproveitamento</button> */}
                     </div>
                     
-                    {/* 
-                    <div>
+                    
+                    {/* <div>
                         <input type="file" onChange={handleFileChange} />
                         <button disabled={!excelFile} onClick={uploadData}>Carregar dados da planilha</button>
                     </div> */}
